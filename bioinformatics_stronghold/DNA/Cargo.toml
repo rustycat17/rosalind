@@ -1,5 +1,5 @@
 [package]
-name = "DNA"
+name = "dna"
 version = "0.1.0"
 authors = ["rustycat17 <rustycat17@posteo.nz>"]
 edition = "2018"
