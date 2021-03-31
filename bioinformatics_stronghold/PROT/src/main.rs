@@ -4,7 +4,7 @@ use std::fs;
 fn main() {
     let codon_table = build_codon_table();
 
-    let filepath = "data/input.txt";
+    let filepath = "data/rosalind_prot.txt";
     let input = fs::read_to_string(filepath);
 
     let input = match input {
