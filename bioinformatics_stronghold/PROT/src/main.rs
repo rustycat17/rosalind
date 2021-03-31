@@ -18,7 +18,7 @@ fn main() {
     for c in input.chars() {
         triplet.push(c);
         if triplet.len() == 3 {
-            let current_codon =  &codon_table[&triplet];
+            let current_codon = &codon_table[&triplet];
             if current_codon == "*" {
                 break;
             }
@@ -29,7 +29,6 @@ fn main() {
     }
 
     println!("{}", result);
-
 }
 
 fn build_codon_table() -> HashMap<String, String> {
