@@ -9,7 +9,7 @@ struct Sequence {
 }
 
 fn main() {
-    let filepath = "data/input.txt";
+    let filepath = "data/rosalind_gc.txt";
     let input = fs::read_to_string(filepath);
     let input = match input {
         Ok(input) => input,
