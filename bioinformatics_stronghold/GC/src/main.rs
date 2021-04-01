@@ -34,13 +34,11 @@ fn main() {
         }
     }
 
-    let cloned_sequence = sequence.clone();
-    add_sequence_entry(header, cloned_sequence, &mut all_sequences);
+    add_sequence_entry(header, sequence, &mut all_sequences);
 
     let (max_header, max_value) = extract_max_gc(all_sequences);
     println!("{}", max_header);
     println!("{}", max_value)
-
 }
 
 fn extract_max_gc(all_sequences: Vec<Sequence>) -> (String, f64) {
@@ -53,14 +51,14 @@ fn extract_max_gc(all_sequences: Vec<Sequence>) -> (String, f64) {
     max_value
 }
 
-fn add_sequence_entry(header: String, cloned_sequence: String, all_sequences: &mut Vec<Sequence>) {
+fn add_sequence_entry(header: String, sequence: String, all_sequences: &mut Vec<Sequence>) {
     let re = Regex::new(r"[CG]").unwrap();
-    let gc = re.find_iter(&cloned_sequence).count() as f64 / cloned_sequence.len() as f64 * 100.0;
+    let gc = re.find_iter(&sequence).count() as f64 / sequence.len() as f64 * 100.0;
 
     let current_sequence = Sequence {
         header: header[1..].to_string(),
-        sequence: cloned_sequence,
-        gc: gc,
+        sequence,
+        gc,
     };
     all_sequences.push(current_sequence);
 }
