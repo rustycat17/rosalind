@@ -8,7 +8,7 @@ fn main() {
         Err(err) => panic!("{}", err),
     };
 
-    let out:Vec<&str> = input.split("\n").collect();
+    let out: Vec<&str> = input.split('\n').collect();
     let sequence1 = out[0];
     let sequence2 = out[1];
 
